@@ -18,16 +18,36 @@ https://beta.openai.com/account/api-keys
 """
 openai.api_key = OPENAI_KEY
 
+"""
+res = openai.Completion.create(
+    model="text-davinci-001",
+    prompt="何か言って",
+    max_tokens=100,
+    temperature=0
+)
+print(res)
 
-# res = openai.Completion.create(
-#     model="text-davinci-003",
-#     prompt="何か言って",
-#     max_tokens=100,
-#     temperature=0
-# )
-# print(res)
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "logprobs": null,
+      "text": "\u304f\u308c\u308b\u304b\u306a\n\nWhat do you think?"
+    }
+  ],
+  "created": 1674535903,
+  "id": "cmpl-6c5ZXUVur622FY3mkelhCqkCieVHT",
+  "model": "text-davinci-001",
+  "object": "text_completion",
+  "usage": {
+    "completion_tokens": 12,
+    "prompt_tokens": 8,
+    "total_tokens": 20
+  }
+}
+"""
 
-# openai.error.RateLimitError: You exceeded your current quota, please check your plan and billing details.
 
 """
 res = openai.Completion.create(
